@@ -46,8 +46,8 @@
             else fetch(window.getApiPath('logout.php'), { credentials: 'include' }).then(()=> location.reload());
           });
         } else {
-          iconNav.innerHTML = `<a href="login.html"><img src="assets/images/ProfileIcon.png" alt="Login"></a>
-                               <a href="register.html" style="margin-left:8px">Register</a>
+          iconNav.innerHTML = `<a href="register.html" style="margin-right:8px">Register</a>
+                               <a href="login.html"><img src="assets/images/ProfileIcon.png" alt="Login"></a>
                                <a href="cart.html"><img src="assets/images/CartIcon.png" alt="Cart"><span id="cart-count" style="display:inline-block;margin-left:6px;color:#111;">0</span></a>`;
         }
       })
