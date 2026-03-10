@@ -397,11 +397,11 @@ h3 {
     <div class="logo">Seraphine Atelier</div>
     <nav>
         <ul class="nav-links">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="product-list.html">Shop</a></li>
-            <li><a href="product-list.html">Categories</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="/products">Shop</a></li>
+            <li><a href="/products">Categories</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -412,8 +412,8 @@ h3 {
         <h1 class="hero-title">{{ $product->name }}</h1>
         <p class="hero-subtitle">Luxury handcrafted jewellery for every occasion.</p>
         <div class="hero-buttons">
-            <a href="product-list.html" class="btn-primary">Shop Now</a>
-            <a href="product-list.html" class="btn-outline">Explore Collections</a>
+            <a href="/products" class="btn-primary">Shop Now</a>
+            <a href="/products" class="btn-outline">Explore Collections</a>
         </div>
     </div>
 </section>

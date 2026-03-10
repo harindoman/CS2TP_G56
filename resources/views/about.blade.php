@@ -17,15 +17,15 @@
     <div class="TopNav">
       
       <!--top navigation links-->
-    <a href="home.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/products">Products</a>
+    <a href="/contact">Contact</a>
 
 <!--icons for login +shopping cart-->
     <div class="IconNav">
-      <a href="login.html"><img src="assets/images/ProfileIcon.png" alt="Login"></a>
-      <a href="cart.html"><img src="assets/images/CartIcon.png" alt="Cart"></a>
+      <a href="/login"><img src="assets/images/ProfileIcon.png" alt="Login"></a>
+      <a href="/cart"><img src="assets/images/CartIcon.png" alt="Cart"></a>
     </div>
   </div>
 

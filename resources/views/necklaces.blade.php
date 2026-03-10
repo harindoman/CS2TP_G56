@@ -11,10 +11,10 @@
     <div class="PageContent">
       <!-- main site navigation -->
       <header class="TopNav">
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/products">Products</a>
+        <a href="/contact">Contact</a>
         <!-- login/profile/cart icons added by JS -->
         <div class="IconNav" id="auth-buttons"></div>
       </header>
@@ -36,30 +36,26 @@
  <!-- necklace products grid -->
       <main class="ProductsGrid" aria-label="Necklaces">
          <!-- product card 1 + description + price -->
-        <a class="ProductCard" href="product.html?product=handcrafted-jewellry">
+        <a class="ProductCard" href="/products">
           <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/HandCraftedJewellry.png" alt="Signature Necklace"></div>
           <div class="ProductInfo"><h3 class="ProductTitle">Signature Necklace</h3><p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance and premium craftsmanship.</p><div class="ProductMeta"><span class="ProductPrice">£199</span></div></div>
         </a>
-<<<<<<< HEAD
-        <!-- product card  2 + description + price -->
-=======
-
-<a class="ProductCard" href="product.html?product=gold-necklace">
+<a class="ProductCard" href="/products">
           <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/gold-necklace.jpg" alt="Gold Necklace"></div>
           <div class="ProductInfo"><h3 class="ProductTitle">Gold Necklace</h3><p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance and premium craftsmanship.</p><div class="ProductMeta"><span class="ProductPrice">£250</span></div></div>
         </a>
 
-        <a class="ProductCard" href="product.html?product=pearl-necklace">
+        <a class="ProductCard" href="/products">
           <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/pearl-necklace.jpg" alt="Pearl Necklace"></div>
           <div class="ProductInfo"><h3 class="ProductTitle">Pearl Necklace</h3><p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance and premium craftsmanship.</p><div class="ProductMeta"><span class="ProductPrice">£240</span></div></div>
         </a>
 
-        <a class="ProductCard" href="product.html?product=diamond-choker">
+        <a class="ProductCard" href="/products">
           <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/diamond-choker.jpg" alt="Diamond Choker"></div>
           <div class="ProductInfo"><h3 class="ProductTitle">Diamond Choker</h3><p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance and premium craftsmanship.</p><div class="ProductMeta"><span class="ProductPrice">£280</span></div></div>
         </a>
 
-        <a class="ProductCard" href="product.html?product=layered-necklace">
+        <a class="ProductCard" href="/products">
           <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/layered-necklace.jpg" alt="Layered Necklace"></div>
           <div class="ProductInfo"><h3 class="ProductTitle">Layered Necklace</h3><p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance and premium craftsmanship.</p><div class="ProductMeta"><span class="ProductPrice">£450</span></div></div>
         </a>
@@ -69,7 +65,6 @@
 
 
 >>>>>>> b4c5a9c09529ecbaff02d7f14bc8223fd0fe3de7
-        <a class="ProductCard" href="product.html?product=signature-pendant">
           <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/LandingPageImage.png" alt="Signature Pendant"></div>
           <div class="ProductInfo"><h3 class="ProductTitle">Signature Pendant</h3><p class="ProductDescription">A timeless pendant inspired by classical forms. Precision craftsmanship meets elegant design for the discerning collector.</p><div class="ProductMeta"><span class="ProductPrice">£179</span></div></div>
         </a>

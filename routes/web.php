@@ -9,9 +9,23 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
+/*
+|--------------------------------------------------------------------------
+| Public Pages
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::view('/about', 'about')->name('about');
+
+/*
+|--------------------------------------------------------------------------
+| Dashboard (Breeze)
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -23,35 +37,65 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Custom Product Routes
+/*
+|--------------------------------------------------------------------------
+| Products
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/category/{category}', [ProductController::class, 'byCategory'])->name('products.category');
 
-// Custom Cart Routes
+/*
+|--------------------------------------------------------------------------
+| Cart
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
-// Checkout Routes
+/*
+|--------------------------------------------------------------------------
+| Checkout
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
-// Custom Auth Routes (Optional - use if you prefer these)
-Route::get('/login-custom', [AuthController::class, 'showLogin'])->name('login-custom');
-Route::post('/login-custom', [AuthController::class, 'login'])->name('login-custom.post');
-Route::get('/register-custom', [AuthController::class, 'showRegister'])->name('register-custom');
-Route::post('/register-custom', [AuthController::class, 'register'])->name('register-custom.post');
+/*
+|--------------------------------------------------------------------------
+| Orders
+|--------------------------------------------------------------------------
+*/
 
-// Orders Routes
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
 Route::post('/orders/{id}/cancel', [OrderController::class, 'cancel'])->name('orders.cancel');
 
-// Contact Routes
+/*
+|--------------------------------------------------------------------------
+| Contact
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+/*
+|--------------------------------------------------------------------------
+| Custom Auth (Optional)
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/login-custom', [AuthController::class, 'showLogin'])->name('login-custom');
+Route::post('/login-custom', [AuthController::class, 'login'])->name('login-custom.post');
+Route::get('/register-custom', [AuthController::class, 'showRegister'])->name('register-custom');
+Route::post('/register-custom', [AuthController::class, 'register'])->name('register-custom.post');
 
 require __DIR__.'/auth.php';

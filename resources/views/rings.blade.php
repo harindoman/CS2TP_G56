@@ -10,21 +10,21 @@
   <div class="page-wrapper">
     <div class="PageContent">
       <header class="TopNav">
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/products">Products</a>
+        <a href="/contact">Contact</a>
         <div class="IconNav" id="auth-buttons"></div>
       </header>
 
       <!-- category navigation for browsing products -->
       <nav class="CategoryNav" aria-label="Product categories">
-        <a href="products.html">All</a>
-        <a href="rings.html">Rings</a>
-        <a href="earrings.html">Earrings</a>
-        <a href="bracelets.html">Bracelets</a>
-        <a href="necklaces.html">Necklaces</a>
-        <a href="watches.html">Watches</a>
+        <a href="/products">All</a>
+        <a href="/category/rings">Rings</a>
+        <a href="/category/earrings">Earrings</a>
+        <a href="/category/bracelets">Bracelets</a>
+        <a href="/category/necklaces">Necklaces</a>
+        <a href="/category/watches">Watches</a>
       </nav>
 
 <!-- page heading + short description -->
@@ -36,15 +36,7 @@
        <!-- main product grid -->
       <main class="ProductsGrid" aria-label="Rings">
 
-<<<<<<< HEAD
-        <!-- single ring product card + description + price -->
-        <a class="ProductCard" href="product.html?product=buta-ring">
-          <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/ButaRing.png" alt="Buta Ring"></div>
-          <div class="ProductInfo"><h3 class="ProductTitle">Buta Ring</h3><p class="ProductDescription">A beautifully detailed ring with traditional motifs. Handcrafted from ethically sourced materials with intricate detailing.</p><div class="ProductMeta"><span class="ProductPrice">£129</span></div></div>
-        </a>
-      </main>
-=======
-  <a class="ProductCard" href="products.html?product=buta-ring" data-name="Buta Ring" data-category="Ring">
+  <a class="ProductCard" href="/products" data-name="Buta Ring" data-category="Ring">
     <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/ButaRing.png" alt="Buta Ring"></div>
     <div class="ProductInfo">
       <h3 class="ProductTitle">Buta Ring</h3>
@@ -53,7 +45,7 @@
     </div>
   </a>
 
-  <a class="ProductCard" href="products.html?product=rose-gold-ring" data-name="Rose Gold Ring" data-category="Ring">
+  <a class="ProductCard" href="/products" data-name="Rose Gold Ring" data-category="Ring">
     <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/rose-gold.jpg" alt="Rose Gold Ring"></div>
     <div class="ProductInfo">
       <h3 class="ProductTitle">Rose Gold Ring</h3>
@@ -62,7 +54,7 @@
     </div>
   </a>
 
-  <a class="ProductCard" href="products.html?product=diamond-ring" data-name="Diamond Ring" data-category="Ring">
+  <a class="ProductCard" href="/products" data-name="Diamond Ring" data-category="Ring">
     <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/diamond-ring.jpg" alt="Diamond Ring"></div>
     <div class="ProductInfo">
       <h3 class="ProductTitle">Diamond Ring</h3>
@@ -71,7 +63,7 @@
     </div>
   </a>
 
-<a class="ProductCard" href="products.html?product=Sapphire-ring" data-name="Sapphire Ring" data-category="Ring">
+<a class="ProductCard" href="/products" data-name="Sapphire Ring" data-category="Ring">
     <div class="ProductImageWrap"><img class="ProductImage" src="assets/images/saphire-ring.jpg" alt="Sapphire Ring"></div>
     <div class="ProductInfo">
       <h3 class="ProductTitle">Sapphire Ring</h3>
