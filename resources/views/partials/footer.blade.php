@@ -15,3 +15,4 @@
 <script>try { document.getElementById('year').textContent = new Date().getFullYear(); } catch(e){}</script>
 <script src="{{ asset('js/index.js') }}" defer></script>
 
+

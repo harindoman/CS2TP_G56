@@ -137,7 +137,7 @@
         <div class="PageContent">
             <header class="TopNav" role="navigation" aria-label="Main navigation">
                 <a class="logo-link" href="/" aria-label="Skyrose Atelier home">
-                    <img class="header-logo home-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo">
+                    <img class="header-logo home-logo" src="{{ asset('images/logo Skyrose.jpg') }}" alt="Skyrose Atelier logo">
                 </a>
                 <a href="/">Home</a>
                 <a href="/about">About</a>
@@ -193,4 +193,5 @@
     </div>
 </body>
 </html>
+
 

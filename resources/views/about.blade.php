@@ -71,7 +71,7 @@
             @include('partials.nav')
 
             <section class="about-hero">
-                <img src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo" style="width:260px;height:auto;margin-bottom:20px;border-radius:4px;">
+                <img src="{{ asset('images/logo Skyrose.jpg') }}" alt="Skyrose Atelier logo" style="width:260px;height:auto;margin-bottom:20px;border-radius:4px;">
                 <h1 class="MainTitle">About Skyrose Atelier</h1>
                 <p class="TitleDescription">
                     Founded with a love of fine craftsmanship, Skyrose Atelier offers
@@ -104,4 +104,5 @@
     </div>
 </body>
 </html>
+
 

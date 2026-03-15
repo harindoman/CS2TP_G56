@@ -11,7 +11,7 @@
   <div class="page-wrapper">
     <div class="PageContent">
       <header class="TopNav">
-        <a class="logo-link" href="/" aria-label="Skyrose Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo"></a>
+        <a class="logo-link" href="/" aria-label="Skyrose Atelier home"><img class="header-logo" src="{{ asset('images/logo Skyrose.jpg') }}" alt="Skyrose Atelier logo"></a>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/products">Products</a>
@@ -137,5 +137,6 @@
   <script src="{{ asset('js/index.js') }}" defer></script>
 </body>
 </html>
+
 
 
