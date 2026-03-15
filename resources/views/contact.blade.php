@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us &ndash; Seraphine Atelier</title>
+    <title>Contact Us &ndash; Skyrose Atelier</title>
     @include('partials.head')
 </head>
 <body>
@@ -16,7 +16,7 @@
                     <div class="contact-info-icon"><img src="{{ asset('images/MailIcon.png') }}"></div>
                     <div class="contact-info-text">
                         <h3>Email</h3>
-                        <p>hello@SeraphineAtelier.com</p>
+                        <p>hello@SykroseAtelier.com</p>
                     </div>
                 </div>
                 <div class="contact-info-card">
@@ -93,3 +93,4 @@ contactForm.addEventListener('submit', e => {
 </script>
 </body>
 </html>
+

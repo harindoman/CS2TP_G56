@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seraphine Atelier</title>
+    <title>Skyrose Atelier</title>
     @include('partials.head')
     <style>
         .Hero {
@@ -136,8 +136,8 @@
     <div class="page-wrapper">
         <div class="PageContent">
             <header class="TopNav" role="navigation" aria-label="Main navigation">
-                <a class="logo-link" href="/" aria-label="Seraphine Atelier home">
-                    <img class="header-logo home-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Seraphine Atelier logo">
+                <a class="logo-link" href="/" aria-label="Skyrose Atelier home">
+                    <img class="header-logo home-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo">
                 </a>
                 <a href="/">Home</a>
                 <a href="/about">About</a>
@@ -193,3 +193,4 @@
     </div>
 </body>
 </html>
+

@@ -1,17 +1,17 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Watches â€” Seraphine Atelier</title>
+  <title>Watches — Skyrose Atelier</title>
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 <body>
   <div class="page-wrapper">
     <div class="PageContent">
       <header class="TopNav">
-        <a class="logo-link" href="/" aria-label="Seraphine Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Seraphine Atelier logo"></a>
+        <a class="logo-link" href="/" aria-label="Skyrose Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo"></a>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/products">Products</a>
@@ -52,7 +52,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Gold Watch</h3>
             <p class="ProductDescription">A timeless gold factory watch inspired by classical forms. Precision craftsmanship meets elegant design.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£650</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£650</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-gold-watch"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Gold Watch', 'qty-gold-watch')">Add to Cart</button>
           </div>
@@ -66,7 +66,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Sport Watch</h3>
             <p class="ProductDescription">A timeless watch inspired by classical forms. Precision craftsmanship meets elegant design.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£290</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£290</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-sport-watch"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Sport Watch', 'qty-sport-watch')">Add to Cart</button>
           </div>
@@ -80,7 +80,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Silver Watch</h3>
             <p class="ProductDescription">A timeless factory silver watch inspired by classical forms. Precision craftsmanship meets elegant design.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£410</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£410</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-silver-watch"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Silver Watch', 'qty-silver-watch')">Add to Cart</button>
           </div>
@@ -94,7 +94,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Classic Leather Watch</h3>
             <p class="ProductDescription">A timeless classic leather watch inspired by classical forms. Precision craftsmanship meets elegant design.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£350</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£350</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-classic-leather-watch"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Classic Leather Watch', 'qty-classic-leather-watch')">Add to Cart</button>
           </div>
@@ -108,7 +108,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Luxury Watch</h3>
             <p class="ProductDescription">A timeless watch inspired by classical forms. Precision craftsmanship meets elegant design.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£850</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£850</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-luxury-watch"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Luxury Watch', 'qty-luxury-watch')">Add to Cart</button>
           </div>
@@ -126,7 +126,7 @@
       </div>
 
       <!-- copyright text -->
-      <div class="FooterCopyright">&copy; <span id="year">2025</span> Seraphine Atelier</div>
+      <div class="FooterCopyright">&copy; <span id="year">2025</span> Skyrose Atelier</div>
     </footer>
   </div>
 
@@ -136,4 +136,5 @@
   <script src="{{ asset('js/index.js') }}" defer></script>
 </body>
 </html>
+
 

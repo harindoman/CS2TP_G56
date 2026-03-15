@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Necklaces â€” Seraphine Atelier</title>
+  <title>Necklaces — Skyrose Atelier</title>
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div class="PageContent">
       <!-- main site navigation -->
       <header class="TopNav">
-        <a class="logo-link" href="/" aria-label="Seraphine Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Seraphine Atelier logo"></a>
+        <a class="logo-link" href="/" aria-label="Skyrose Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo"></a>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/products">Products</a>
@@ -54,7 +54,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Signature Necklace</h3>
             <p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£380</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£380</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-signature-necklace"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Signature Necklace', 'qty-signature-necklace')">Add to Cart</button>
           </div>
@@ -69,7 +69,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Diamond Choker Necklace</h3>
             <p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£720</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£720</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-diamond-choker"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Diamond Choker', 'qty-diamond-choker')">Add to Cart</button>
           </div>
@@ -83,7 +83,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Pearl Necklace</h3>
             <p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£420</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£420</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-pearl-necklace"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Pearl Necklace', 'qty-pearl-necklace')">Add to Cart</button>
           </div>
@@ -97,7 +97,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Gold Necklace</h3>
             <p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£540</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£540</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-gold-necklace"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Gold Necklace', 'qty-gold-necklace')">Add to Cart</button>
           </div>
@@ -111,7 +111,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Layered Necklace</h3>
             <p class="ProductDescription">Statement necklace made by skilled artisans. Designed to elevate any occasion with timeless elegance.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£340</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£340</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-layered-necklace"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Layered Necklace', 'qty-layered-necklace')">Add to Cart</button>
           </div>
@@ -128,7 +128,7 @@
         <img class="FooterIcons" src="{{ asset('images/YoutubeIcon.png') }}" alt="YouTube">
       </div>
       <!-- copyright -->
-      <div class="FooterCopyright">&copy; <span id="year">2025</span> Seraphine Atelier</div>
+      <div class="FooterCopyright">&copy; <span id="year">2025</span> Skyrose Atelier</div>
     </footer>
   </div>
 
@@ -138,4 +138,5 @@
   <script src="{{ asset('js/index.js') }}" defer></script>
 </body>
 </html>
+
 

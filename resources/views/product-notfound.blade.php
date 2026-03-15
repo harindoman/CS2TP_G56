@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -256,7 +256,7 @@
         <div class="PageContent">
             <!-- Top Navigation -->
             <div class="TopNav">
-                <a class="logo-link" href="/" aria-label="Seraphine Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Seraphine Atelier logo"></a>
+                <a class="logo-link" href="/" aria-label="Skyrose Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo"></a>
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/products">Products</a>
@@ -287,7 +287,7 @@
                     <div class="ProductCategory" id="productCategory">Category</div>
                     <h1 class="ProductTitle" id="productName">Product Name</h1>
                     
-                    <div class="ProductPrice" id="productPrice">Â£0.00</div>
+                    <div class="ProductPrice" id="productPrice">£0.00</div>
 
                     <div class="StockInfo">
                         <span class="StockBadge" id="stockBadge">In Stock</span>
@@ -299,13 +299,13 @@
                     <div class="QuantitySection">
                         <label class="QuantityLabel">Quantity:</label>
                         <div class="QuantityControl">
-                            <button onclick="decrementQuantity()">âˆ’</button>
+                            <button onclick="decrementQuantity()">−</button>
                             <input type="number" id="quantityInput" min="1" max="100" value="1" readonly>
                             <button onclick="incrementQuantity()">+</button>
                         </div>
                     </div>
 
-                    <div class="SuccessMessage" id="successMessage">âœ“ Added to cart successfully!</div>
+                    <div class="SuccessMessage" id="successMessage">✓ Added to cart successfully!</div>
                     <div class="ErrorMessage" id="errorMessage"></div>
 
                     <div class="AddToCartSection">
@@ -334,7 +334,7 @@
             </div>
 
             <div style="text-align: center; padding: 40px 20px;">
-                <a href="/products" style="color: #0066cc; text-decoration: none; font-weight: 600;">â† Continue Shopping</a>
+                <a href="/products" style="color: #0066cc; text-decoration: none; font-weight: 600;">← Continue Shopping</a>
             </div>
         </div>
 
@@ -346,7 +346,7 @@
                     <img src="{{ asset('images/InstagramIcon.png') }}" class="FooterIcons" alt="instagram">
                     <img src="{{ asset('images/YoutubeIcon.png') }}" class="FooterIcons" alt="youtube">
                 </div>
-                <p class="ContactTitle">Â© 2025 Luxury Jewelry Store</p>
+                <p class="ContactTitle">© 2025 Luxury Jewelry Store</p>
             </footer>
         </div>
         <script src="{{ asset('js/index.js') }}" defer></script>
@@ -602,7 +602,7 @@
             currentProduct = products[productId];
             
             // Update page title
-            document.title = currentProduct.name + ' | Seraphine Atelier';
+            document.title = currentProduct.name + ' | Skyrose Atelier';
 
             // Update breadcrumb
             document.getElementById('breadcrumbName').textContent = currentProduct.name;
@@ -612,7 +612,7 @@
             document.getElementById('productImage').alt = currentProduct.name;
             document.getElementById('productName').textContent = currentProduct.name;
             document.getElementById('productCategory').textContent = currentProduct.category;
-            document.getElementById('productPrice').textContent = 'Â£' + currentProduct.price.toLocaleString('en-GB', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('productPrice').textContent = '£' + currentProduct.price.toLocaleString('en-GB', {minimumFractionDigits: 2, maximumFractionDigits: 2});
             document.getElementById('productDescription').textContent = currentProduct.description;
             document.getElementById('productSKU').textContent = currentProduct.sku;
             document.getElementById('productCategoryDetail').textContent = currentProduct.category;
@@ -675,14 +675,14 @@
             successMsg.style.display = 'none';
 
             if (!currentProduct) {
-                errorMsg.textContent = 'âœ— Product not loaded. Please refresh the page.';
+                errorMsg.textContent = '✗ Product not loaded. Please refresh the page.';
                 errorMsg.style.display = 'block';
                 console.error('Current product is null');
                 return;
             }
 
             if (!currentProduct.name || currentProduct.price === undefined) {
-                errorMsg.textContent = 'âœ— Product data incomplete.';
+                errorMsg.textContent = '✗ Product data incomplete.';
                 errorMsg.style.display = 'block';
                 console.error('Product missing required fields:', currentProduct);
                 return;
@@ -711,7 +711,7 @@
             .then(data => {
                 console.log('Response data:', data);
                 if (data.error) {
-                    errorMsg.textContent = 'âœ— ' + data.error;
+                    errorMsg.textContent = '✗ ' + data.error;
                     errorMsg.style.display = 'block';
                 } else if (data.success) {
                     successMsg.style.display = 'block';
@@ -728,13 +728,13 @@
                         successMsg.style.display = 'none';
                     }, 3000);
                 } else {
-                    errorMsg.textContent = 'âœ— Unexpected response from server.';
+                    errorMsg.textContent = '✗ Unexpected response from server.';
                     errorMsg.style.display = 'block';
                 }
             })
             .catch(err => {
                 console.error('Fetch error:', err);
-                errorMsg.textContent = 'âœ— Error adding to cart: ' + err.message;
+                errorMsg.textContent = '✗ Error adding to cart: ' + err.message;
                 errorMsg.style.display = 'block';
             });
         }
@@ -765,4 +765,5 @@
     </script>
 </body>
 </html>
+
 

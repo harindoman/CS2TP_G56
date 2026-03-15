@@ -1,11 +1,11 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <!--main stylesheet-->
   <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bracelets â€” Seraphine Atelier</title>
+  <title>Bracelets — Skyrose Atelier</title>
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="PageContent">
       <!--main top navbar-->
       <header class="TopNav">
-        <a class="logo-link" href="/" aria-label="Seraphine Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Seraphine Atelier logo"></a>
+        <a class="logo-link" href="/" aria-label="Skyrose Atelier home"><img class="header-logo" src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo"></a>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/products">Products</a>
@@ -52,7 +52,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Bleeding Heart Bracelet</h3>
             <p class="ProductDescription">Handcrafted bracelet with romantic detailing. A statement piece celebrating love and craftsmanship.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£245</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£245</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-bleeding-heart-bracelet"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Bleeding Heart Bracelet', 'qty-bleeding-heart-bracelet')">Add to Cart</button>
           </div>
@@ -66,7 +66,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Gold Bangle Bracelet</h3>
             <p class="ProductDescription">Golden baddazzling heavy bangle bracelet perfect for weddings and special occasions. A statement piece celebrating love and craftsmanship.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£380</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£380</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-gold-bangle"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Gold Bangle', 'qty-gold-bangle')">Add to Cart</button>
           </div>
@@ -80,7 +80,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Cuban Bracelet</h3>
             <p class="ProductDescription">An embezzeling factory made Cuban Bracelet full of luxury. A statement piece celebrating love and craftsmanship.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£520</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£520</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-cuban-bracelet"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Cuban Bracelet', 'qty-cuban-bracelet')">Add to Cart</button>
           </div>
@@ -94,7 +94,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Charm Bracelet</h3>
             <p class="ProductDescription">Handcrafted bracelet with romantic detailing. A statement piece celebrating love and craftsmanship.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£310</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£310</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-charm-bracelet"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Charm Bracelet', 'qty-charm-bracelet')">Add to Cart</button>
           </div>
@@ -108,7 +108,7 @@
           <div class="ProductInfo">
             <h3 class="ProductTitle">Leather Bracelet</h3>
             <p class="ProductDescription">Handcrafted leather bracelet with a rugged yet refined look. A statement piece celebrating love and craftsmanship.</p>
-            <div class="ProductMeta"><span class="ProductPrice">Â£175</span></div>
+            <div class="ProductMeta"><span class="ProductPrice">£175</span></div>
             <div class="QuantitySelector"><label>Qty:</label><select id="qty-leather-bracelet"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div>
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Leather Bracelet', 'qty-leather-bracelet')">Add to Cart</button>
           </div>
@@ -124,7 +124,7 @@
         <img class="FooterIcons" src="{{ asset('images/YoutubeIcon.png') }}" alt="YouTube">
       </div>
       <!--copyright-->
-      <div class="FooterCopyright">&copy; <span id="year">2025</span> Seraphine Atelier</div>
+      <div class="FooterCopyright">&copy; <span id="year">2025</span> Skyrose Atelier</div>
     </footer>
   </div>
 <!--update footer year automatically-->
@@ -133,4 +133,5 @@
   <script src="{{ asset('js/index.js') }}" defer></script>
 </body>
 </html>
+
 

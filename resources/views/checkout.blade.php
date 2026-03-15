@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Checkout &ndash; Seraphine Atelier</title>
+    <title>Checkout &ndash; Skyrose Atelier</title>
     @include('partials.head')
 </head>
 <body>
@@ -45,3 +45,4 @@
     </script>
 </body>
 </html>
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Basket &ndash; Seraphine Atelier</title>
+    <title>Shopping Basket &ndash; Skyrose Atelier</title>
     @include('partials.head')
     <style>
         .CartPage { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
@@ -209,3 +209,4 @@
     </script>
 </body>
 </html>
+
