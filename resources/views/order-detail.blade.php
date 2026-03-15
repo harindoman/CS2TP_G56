@@ -68,6 +68,12 @@
                             <p class="InfoLabel">Shipping Address</p>
                             <p class="InfoValue">{{ $order->shipping_address ?? 'N/A' }}</p>
                         </div>
+                        @if($isAdmin ?? false)
+                        <div>
+                            <p class="InfoLabel">Customer</p>
+                            <p class="InfoValue">{{ $order->user->name ?? 'Unknown' }}<br><span style="font-size:13px;color:#888;">{{ $order->user->email ?? '' }}</span></p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 

@@ -38,11 +38,11 @@
             @include('partials.nav')
 
             <div class="OrdersPage">
-                <h1>My Orders</h1>
+                <h1>{{ $isAdmin ? 'All Orders' : 'My Orders' }}</h1>
 
                 @if($orders->isEmpty())
                     <div class="EmptyOrders">
-                        <p>You haven't placed any orders yet.</p>
+                        <p>{{ $isAdmin ? 'No orders have been placed yet.' : "You haven't placed any orders yet." }}</p>
                         <a href="{{ route('products.index') }}">Browse Products</a>
                     </div>
                 @else
@@ -52,6 +52,7 @@
                                 <tr>
                                     <th>Order</th>
                                     <th>Date</th>
+                                    @if($isAdmin)<th>Customer</th>@endif
                                     <th style="text-align:center;">Items</th>
                                     <th style="text-align:right;">Total</th>
                                     <th style="text-align:center;">Status</th>
@@ -63,6 +64,9 @@
                                 <tr>
                                     <td style="font-weight:700;">#{{ $order->id }}</td>
                                     <td>{{ $order->created_at->format('d M Y') }}</td>
+                                    @if($isAdmin)
+                                        <td style="font-size:13px;">{{ $order->user->name ?? 'Unknown' }}<br><span style="color:#999;">{{ $order->user->email ?? '' }}</span></td>
+                                    @endif
                                     <td style="text-align:center;">{{ $order->orderItems->count() }}</td>
                                     <td style="text-align:right;" class="OrderAmount">&pound;{{ number_format($order->total_amount, 2) }}</td>
                                     <td style="text-align:center;">
