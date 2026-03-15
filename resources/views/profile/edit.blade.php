@@ -43,6 +43,31 @@
         .ProfileName { font-size: 15px; color: #555; }
         .OrderLink { font-size: 14px; color: #d4af37; text-decoration: none; font-weight: 600; }
         .OrderLink:hover { text-decoration: underline; }
+
+        /* Orders table */
+        .ProfilePage { max-width: 900px; }
+        .OrdersTable { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .OrdersTable th {
+            text-align: left; padding: 10px 12px; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.6px; color: #888;
+            border-bottom: 2px solid #eee; background: #fafafa;
+        }
+        .OrdersTable td { padding: 12px 12px; border-bottom: 1px solid #f0ece4; color: #1a1a1a; vertical-align: middle; }
+        .OrdersTable tr:last-child td { border-bottom: none; }
+        .OrdersTable tr:hover td { background: #fdf9f0; }
+        .OBadge {
+            display: inline-block; padding: 3px 10px; border-radius: 20px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .OBadge.pending    { background:#fff8e1; color:#b8860b; }
+        .OBadge.processing { background:#e3f2fd; color:#1565c0; }
+        .OBadge.shipped    { background:#e0f2f1; color:#00695c; }
+        .OBadge.completed  { background:#e8f5e9; color:#2e7d32; }
+        .OBadge.cancelled  { background:#fde8e8; color:#c0392b; }
+        .OBadge.refunded   { background:#f3e8fd; color:#6d28d9; }
+        .OrdersEmpty { text-align: center; padding: 40px 0; color: #aaa; font-size: 14px; }
+        .OrderDetailLink { color: #d4af37; text-decoration: none; font-weight: 600; font-size: 12px; }
+        .OrderDetailLink:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -116,13 +141,53 @@
                     </form>
                 </div>
 
-                {{-- Quick links --}}
+                {{-- Orders history --}}
                 <div class="ProfileCard">
-                    <h2>My Orders</h2>
-                    <div class="ProfileRow">
-                        <span class="ProfileName">View your order history, track shipments and manage returns.</span>
-                        <a href="{{ route('orders.index') }}" class="OrderLink">View Orders &rarr;</a>
-                    </div>
+                    <h2>{{ $isAdmin ? 'All Customer Orders' : 'My Order History' }}</h2>
+
+                    @if($orders->isEmpty())
+                        <div class="OrdersEmpty">No orders found.</div>
+                    @else
+                        <div style="overflow-x:auto;">
+                            <table class="OrdersTable">
+                                <thead>
+                                    <tr>
+                                        <th>Order #</th>
+                                        @if($isAdmin)
+                                            <th>Customer</th>
+                                        @endif
+                                        <th>Date</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Payment</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($orders as $order)
+                                    <tr>
+                                        <td style="font-weight:600;">#{{ $order->id }}</td>
+                                        @if($isAdmin)
+                                            <td>
+                                                <span style="font-weight:600;">{{ $order->user->name ?? 'Unknown' }}</span><br>
+                                                <span style="font-size:11px;color:#888;">{{ $order->user->email ?? '' }}</span>
+                                            </td>
+                                        @endif
+                                        <td>{{ $order->created_at->format('d M Y') }}</td>
+                                        <td>&pound;{{ number_format($order->total_amount, 2) }}</td>
+                                        <td>
+                                            <span class="OBadge {{ $order->status }}">{{ ucfirst($order->status) }}</span>
+                                        </td>
+                                        <td style="text-transform:capitalize;color:#555;">{{ str_replace('_', ' ', $order->payment_method ?? '-') }}</td>
+                                        <td>
+                                            <a href="{{ route('orders.show', $order->id) }}" class="OrderDetailLink">View &rarr;</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    @endif
                 </div>
 
                 {{-- Delete Account --}}
