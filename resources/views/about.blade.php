@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>About &ndash; Seraphine Atelier</title>
+    <title>About &ndash; Skyrose Atelier</title>
     @include('partials.head')
     <style>
         .about-hero {
@@ -71,9 +71,10 @@
             @include('partials.nav')
 
             <section class="about-hero">
-                <h1 class="MainTitle">About Seraphine Atelier</h1>
+                <img src="{{ asset('images/logo3-Regulus.jpg') }}" alt="Skyrose Atelier logo" style="width:260px;height:auto;margin-bottom:20px;border-radius:4px;">
+                <h1 class="MainTitle">About Skyrose Atelier</h1>
                 <p class="TitleDescription">
-                    Founded with a love of fine craftsmanship, Seraphine Atelier offers
+                    Founded with a love of fine craftsmanship, Skyrose Atelier offers
                     handcrafted pieces made from ethically sourced materials. Our artisans
                     blend traditional techniques with modern design to deliver heirloom-quality
                     jewelry for every occasion.
@@ -103,3 +104,4 @@
     </div>
 </body>
 </html>
+
