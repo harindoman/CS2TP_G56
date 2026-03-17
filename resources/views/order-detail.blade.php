@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Details</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js" defer></script>
+    <title>Order Details - Seraphine Atelier</title>
+    @vite(['resources/js/app.js'])
 </head>
 <body>
     <div class="page-wrapper">
+        <header class="navbar">
+            <div class="logo">Seraphine Atelier</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Shop</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <div class="PageContent">
-            <!-- Top Navigation -->
-            <div class="TopNav">
-                <a href="{{ url('/') }}">Home</a>
-                <a href="{{ url('/about') }}">About</a>
-                <a href="{{ route('products.index') }}">Products</a>
-                <a href="{{ url('/contact') }}">Contact</a>
-                <div class="IconNav"></div>
-            </div>
+            <!-- Order Details Section -->
 
             <!-- Page Title -->
             <h1 style="text-align: center; margin: 30px 0;">Order #{{ $order->id }}</h1>
@@ -158,17 +162,14 @@
 
         </div>
 
-        <!-- Footer -->
-        <div id="site-footer">
-            <footer class="footer">
-                <div class="FooterIconsContainer">
-                    <img src="assets/images/FacebookIcon.png" class="FooterIcons" alt="facebook">
-                    <img src="assets/images/InstagramIcon.png" class="FooterIcons" alt="instagram">
-                    <img src="assets/images/YoutubeIcon.png" class="FooterIcons" alt="youtube">
-                </div>
-                <p class="ContactTitle">© 2025 Luxury Jewelry Store</p>
-            </footer>
-        </div>
+        <footer id="site-footer" class="footer">
+            <div class="FooterIconsContainer">
+                <img src="{{ asset('images/FacebookIcon.png') }}" class="FooterIcons" alt="facebook">
+                <img src="{{ asset('images/InstagramIcon.png') }}" class="FooterIcons" alt="instagram">
+                <img src="{{ asset('images/YoutubeIcon.png') }}" class="FooterIcons" alt="youtube">
+            </div>
+            <p class="ContactTitle">© 2025 Luxury Jewelry Store</p>
+        </footer>
     </div>
 </body>
 </html>

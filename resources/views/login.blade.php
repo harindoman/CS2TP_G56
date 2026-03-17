@@ -3,51 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>Login - Seraphine Atelier</title>
+    @vite(['resources/js/app.js'])
 </head>
 <body>
-    <!-- top navigation bar -->
     <div class="page-wrapper">
+        <header class="navbar">
+            <div class="logo">Seraphine Atelier</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Shop</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <div class="PageContent">
-            <header class="TopNav">
-                <a href="{{ url('/') }}">Home</a>
-                <a href="{{ url('/about') }}">About</a>
-                <a href="{{ route('products.index') }}">Products</a>
-                <a href="{{ url('/contact') }}">Contact</a>
-                 <!-- login/cart icons handled by JS -->
-                <div class="IconNav" id="auth-buttons"></div>
-            </header>
- <!-- login form area -->
             <div class="AuthPage">
                 <div class="AuthCard">
-                     <!-- login title -->
-        <h1 class="AuthTitle">Login</h1>
-        <!-- login form -->
-        <form action="{{ route('login.post') }}" method="POST" class="AuthForm" id="login-form">
-            @csrf
-            <!-- email input -->
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" value="{{ old('email') }}" required>
-          @error('email')
-            <span style="color: red; font-size: 12px;">{{ $message }}</span>
-          @enderror
+                    <h1 class="AuthTitle">Login</h1>
+                    <form action="{{ route('login.post') }}" method="POST" class="AuthForm" id="login-form">
+                        @csrf
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" value="{{ old('email') }}" required>
+                            @error('email')
+                                <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
 
-<!-- password input -->
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password" required>
-          @error('password')
-            <span style="color: red; font-size: 12px;">{{ $message }}</span>
-          @enderror
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input id="password" name="password" type="password" required>
+                            @error('password')
+                                <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
 
-<!-- submit button -->
-          <button type="submit" class="AuthButton">Login</button>
- <!-- link to registration page -->
-          <p class="AuthHelp">Don't have an account? <a href="{{ route('register') }}">Register</a></p>
-        </form>
-        <!-- error message box -->
-        <div id="error-msg" class="AuthError" aria-live="polite"></div>
-      </div>
+                        <button type="submit" class="AuthButton">Login</button>
+                        <p class="AuthHelp">Don't have an account? <a href="{{ route('register') }}">Register</a></p>
+                    </form>
+                    <div id="error-msg" class="AuthError" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="site-footer" class="footer">
+            <div class="FooterIconsContainer">
+                <img src="{{ asset('images/FacebookIcon.png') }}" class="FooterIcons" alt="facebook">
+                <img src="{{ asset('images/InstagramIcon.png') }}" class="FooterIcons" alt="instagram">
+                <img src="{{ asset('images/YoutubeIcon.png') }}" class="FooterIcons" alt="youtube">
+            </div>
+            <p class="ContactTitle">© 2025 Luxury Jewelry Store</p>
+        </footer>
+    </div>
+</body>
+</html>
     </div>
 
     <!-- Featured Products Section -->
@@ -112,9 +125,9 @@
         <div id="site-footer">
             <footer class="footer">
                 <div class="FooterIconsContainer">
-                    <img src="assets/images/FacebookIcon.png" class="FooterIcons" alt="facebook">
-                    <img src="assets/images/InstagramIcon.png" class="FooterIcons" alt="instagram">
-                    <img src="assets/images/YoutubeIcon.png" class="FooterIcons" alt="youtube">
+                    <img src="{{ asset('images/FacebookIcon.png') }}" class="FooterIcons" alt="facebook">
+                    <img src="{{ asset('images/InstagramIcon.png') }}" class="FooterIcons" alt="instagram">
+                    <img src="{{ asset('images/YoutubeIcon.png') }}" class="FooterIcons" alt="youtube">
                 </div>
                 <p class="ContactTitle">© 2025 Luxury Jewelry Store</p>
             </footer>

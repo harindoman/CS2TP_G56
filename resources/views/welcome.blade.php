@@ -14,7 +14,6 @@
         <ul class="nav-links">
             <li><a class="active" href="/">Home</a></li>
             <li><a href="/products">Shop</a></li>
-            <li><a href="/products">Categories</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
@@ -40,19 +39,19 @@
         <div class="product-grid">
 
             <a href="product.html" class="product-card">
-                <img src="assets/images/elegant gold ring.jpg" alt="Gold Ring">
+                <img src="{{ asset('images/rose-gold.jpg') }}" alt="Gold Ring">
                 <h3>Elegant Gold Ring</h3>
                 <p class="product-price">$249</p>
             </a>
 
             <a href="product.html" class="product-card">
-                <img src="assets/images/silver necklace.jpg" alt="Silver Necklace">
+                <img src="{{ asset('images/gold-necklace.jpg') }}" alt="Silver Necklace">
                 <h3>Silver Necklace</h3>
                 <p class="product-price">$199</p>
             </a>
 
             <a href="product.html" class="product-card">
-                <img src="assets/images/diamond earrings.jpg" alt="Diamond Earrings">
+                <img src="{{ asset('images/diamond-earring.jpg') }}" alt="Diamond Earrings">
                 <h3>Diamond Earrings</h3>
                 <p class="product-price">$349</p>
             </a>

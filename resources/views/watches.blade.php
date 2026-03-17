@@ -4,6 +4,7 @@
   <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< Updated upstream
   <title>Watches — Skyrose Atelier</title>
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
@@ -36,6 +37,32 @@
       </nav>
 
       <!-- page heading + short info -->
+=======
+  <title>Watches — Seraphine Atelier</title>
+  @vite(['resources/js/app.js'])
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="TopNav">
+      <a href="{{ url('/') }}">Home</a>
+      <a href="{{ url('/about') }}">About</a>
+      <a href="{{ route('products.index') }}">Products</a>
+      <a href="{{ url('/contact') }}">Contact</a>
+      <div class="IconNav" id="auth-buttons"></div>
+    </header>
+
+    <!-- Category sub-navigation -->
+    <nav class="CategoryNav" aria-label="Product categories">
+      <a href="{{ route('products.index') }}">All</a>
+      <a href="{{ route('category', 'rings') }}">Rings</a>
+      <a href="{{ route('category', 'earrings') }}">Earrings</a>
+      <a href="{{ route('category', 'bracelets') }}">Bracelets</a>
+      <a href="{{ route('category', 'necklaces') }}">Necklaces</a>
+      <a href="{{ route('category', 'watches') }}">Watches</a>
+    </nav>
+
+    <div class="PageContent">
+>>>>>>> Stashed changes
       <section class="TitleSection">
         <h1 class="MainTitle">Watches</h1>
         <p class="TitleDescription">Curated mechanical and quartz watches.</p>
@@ -58,6 +85,7 @@
           </div>
         </a>
 
+<<<<<<< Updated upstream
         <a class="ProductCard" href="/products?product=sport-watch" data-name="Sport Watch" data-category="Watch">
           <div class="ProductImageWrap">
             <img class="ProductImage" src="{{ asset('images/sport-watch.jpg') }}" alt="Sport Watch">
@@ -71,6 +99,16 @@
             <button class="AddToCartButton" onclick="addToCartWithQuantity(event, 'Sport Watch', 'qty-sport-watch')">Add to Cart</button>
           </div>
         </a>
+=======
+  <a class="ProductCard" href="/products" data-name="Classic Leather Watch" data-category="Watch">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/classic-leather-watch.jpg') }}" alt="Classic Leather Watch"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Classic Leather Watch</h3>
+      <p class="ProductDescription">Handcrafted watch with romantic detailing. A statement piece celebrating love and craftsmanship with timeless appeal.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£987</span></div>
+    </div>
+  </a>
+>>>>>>> Stashed changes
 
         <a class="ProductCard" href="/products?product=silver-watch" data-name="Silver Watch" data-category="Watch">
           <div class="ProductImageWrap">
@@ -86,6 +124,7 @@
           </div>
         </a>
 
+<<<<<<< Updated upstream
         <a class="ProductCard" href="/products?product=Classic-leather-watch" data-name="Classic Leather Watch" data-category="Watch">
           <div class="ProductImageWrap">
             <img class="ProductImage" src="{{ asset('images/classic-leather-watch.jpg') }}" alt="Classic Leather Watch">
@@ -119,11 +158,53 @@
 
     <!-- footer section -->
     <footer class="footer">
+=======
+  <a class="ProductCard" href="/products" data-name="Sport Watch" data-category="Watch">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/sport-watch.jpg') }}" alt="Sport Watch"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Sport Watch</h3>
+      <p class="ProductDescription">Handcrafted watch with romantic detailing. A statement piece celebrating love and craftsmanship with timeless appeal.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£890</span></div>
+    </div>
+  </a>
+
+   <a class="ProductCard" href="/products" data-name="Gold Watch" data-category="Watch">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/gold-watch.jpg') }}" alt="Gold Watch"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Gold Watch</h3>
+      <p class="ProductDescription">Handcrafted watch with romantic detailing. A statement piece celebrating love and craftsmanship with timeless appeal.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£1240</span></div>
+    </div>
+  </a>
+
+   <a class="ProductCard" href="/products" data-name="Luxury Watch" data-category="Watch">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/Rolexwatch.jpg') }}" alt="Luxury Watch"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Luxury Watch</h3>
+      <p class="ProductDescription">Handcrafted watch with romantic detailing. A statement piece celebrating love and craftsmanship with timeless appeal.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£1729</span></div>
+    </div>
+  </a>
+
+   <a class="ProductCard" href="/products" data-name="Silver Watch" data-category="Watch">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/silver-watch.jpg') }}" alt="Silver Watch"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Silver Watch</h3>
+      <p class="ProductDescription">Handcrafted watch with romantic detailing. A statement piece celebrating love and craftsmanship with timeless appeal.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£3404</span></div>
+    </div>
+  </a>
+
+    </div>
+ <!-- footer section -->
+    <footer id="site-footer" class="footer">
+>>>>>>> Stashed changes
       <div class="FooterIconsContainer">
         <img class="FooterIcons" src="{{ asset('images/FacebookIcon.png') }}" alt="Facebook">
         <img class="FooterIcons" src="{{ asset('images/InstagramIcon.png') }}" alt="Instagram">
         <img class="FooterIcons" src="{{ asset('images/YoutubeIcon.png') }}" alt="YouTube">
       </div>
+<<<<<<< Updated upstream
 
       <!-- copyright text -->
       <div class="FooterCopyright">&copy; <span id="year">2025</span> Skyrose Atelier</div>
@@ -134,6 +215,11 @@
   <script>try{document.getElementById('year').textContent=new Date().getFullYear()}catch(e){};</script>
   <!-- main JS file -->
   <script src="{{ asset('js/index.js') }}" defer></script>
+=======
+      <p class="ContactTitle">&copy; 2025 Seraphine Atelier</p>
+    </footer>
+  </div>
+>>>>>>> Stashed changes
 </body>
 </html>
 

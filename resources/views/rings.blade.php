@@ -4,12 +4,36 @@
   <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< Updated upstream
   <title>Rings — Skyrose Atelier</title>
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+=======
+  <title>Rings — Seraphine Atelier</title>
+  @vite(['resources/js/app.js'])
+>>>>>>> Stashed changes
 </head>
 <body>
   <div class="page-wrapper">
+    <header class="TopNav">
+      <a href="{{ url('/') }}">Home</a>
+      <a href="{{ url('/about') }}">About</a>
+      <a href="{{ route('products.index') }}">Products</a>
+      <a href="{{ url('/contact') }}">Contact</a>
+      <div class="IconNav" id="auth-buttons"></div>
+    </header>
+
+    <!-- category navigation for browsing products -->
+    <nav class="CategoryNav" aria-label="Product categories">
+      <a href="{{ route('products.index') }}">All</a>
+      <a href="{{ route('category', 'rings') }}">Rings</a>
+      <a href="{{ route('category', 'earrings') }}">Earrings</a>
+      <a href="{{ route('category', 'bracelets') }}">Bracelets</a>
+      <a href="{{ route('category', 'necklaces') }}">Necklaces</a>
+      <a href="{{ route('category', 'watches') }}">Watches</a>
+    </nav>
+
     <div class="PageContent">
+<<<<<<< Updated upstream
       <header class="TopNav">
         <a class="logo-link" href="/" aria-label="Skyrose Atelier home"><img class="header-logo" src="{{ asset('images/logo Skyrose.jpg') }}" alt="Skyrose Atelier logo"></a>
         <a href="/">Home</a>
@@ -35,6 +59,8 @@
         <a href="/category/watches">Watches</a>
       </nav>
 
+=======
+>>>>>>> Stashed changes
       <!-- page heading + short description -->
       <section class="TitleSection">
         <h1 class="MainTitle">Rings</h1>
@@ -58,6 +84,7 @@
           </div>
         </a>
 
+<<<<<<< Updated upstream
         <a class="ProductCard" href="/products?product=Saphire-ring" data-name="Saphire Ring" data-category="Ring">
           <div class="ProductImageWrap">
             <img class="ProductImage" src="{{ asset('images/saphire-ring.jpg') }}" alt="Saphire Ring">
@@ -114,22 +141,82 @@
           </div>
         </a>
       </main>
+=======
+  <a class="ProductCard" href="/products" data-name="Buta Ring" data-category="Ring">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/ButaRing.png') }}" alt="Buta Ring"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Buta Ring</h3>
+      <p class="ProductDescription">A beautifully detailed ring with traditional motifs. Handcrafted from ethically sourced materials with intricate detailing.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£129</span></div>
+    </div>
+  </a>
+
+  <a class="ProductCard" href="/products" data-name="Rose Gold Ring" data-category="Ring">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/rose-gold.jpg') }}" alt="Rose Gold Ring"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Rose Gold Ring</h3>
+      <p class="ProductDescription">A beautifully Rose gold goldern detailed ring with traditional motifs. Handcrafted from ethically sourced materials with intricate detailing.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£3049</span></div>
+    </div>
+  </a>
+
+  <a class="ProductCard" href="/products" data-name="Diamond Ring" data-category="Ring">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/diamond-ring.jpg') }}" alt="Diamond Ring"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Diamond Ring</h3>
+      <p class="ProductDescription">A dazzling diamond ring that captures the essence of luxury and elegance. Handcrafted from ethically sourced materials with intricate detailing.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£1929</span></div>
+    </div>
+  </a>
+
+<a class="ProductCard" href="/products" data-name="Sapphire Ring" data-category="Ring">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/saphire-ring.jpg') }}" alt="Sapphire Ring"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Sapphire Ring</h3>
+      <p class="ProductDescription">A dazzling sapphire ring that captures the essence of luxury and elegance. Handcrafted from ethically sourced materials with intricate detailing.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£4059</span></div>
+    </div>
+  </a>
+
+  <a class="ProductCard" href="products.html?product=vintage-ring" data-name="Vintage Ring" data-category="Ring">
+    <div class="ProductImageWrap"><img class="ProductImage" src="{{ asset('images/vintage-ring.jpg') }}" alt="Vintage Ring"></div>
+    <div class="ProductInfo">
+      <h3 class="ProductTitle">Vintage Ring</h3>
+      <p class="ProductDescription">A vintage-inspired ring with timeless elegance. Handcrafted from ethically sourced materials with intricate detailing.</p>
+      <div class="ProductMeta"><span class="ProductPrice">£9302</span></div>
+    </div>
+  </a>
+
+
+
+
+</main>
+>>>>>>> Stashed changes
 
     </div>
 
     <!-- footer section -->
-    <footer class="footer">
+    <footer id="site-footer" class="footer">
       <div class="FooterIconsContainer">
         <img class="FooterIcons" src="{{ asset('images/FacebookIcon.png') }}" alt="Facebook">
         <img class="FooterIcons" src="{{ asset('images/InstagramIcon.png') }}" alt="Instagram">
         <img class="FooterIcons" src="{{ asset('images/YoutubeIcon.png') }}" alt="YouTube">
       </div>
+<<<<<<< Updated upstream
       <!-- auto–updating copyright -->
       <div class="FooterCopyright">&copy; <span id="year">2025</span> Skyrose Atelier</div>
     </footer>
   </div>
 
   <!-- automatically update the year -->
+=======
+      <p class="ContactTitle">&copy; 2025 Seraphine Atelier</p>
+    </footer>
+  </div>
+</body>
+</html>
+<!-- automatically update the year -->
+>>>>>>> Stashed changes
   <script>try{document.getElementById('year').textContent=new Date().getFullYear()}catch(e){};</script>
   
   <!-- main site script -->

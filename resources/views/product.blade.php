@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <title>Skyrose Atelier</title>
     <link rel="stylesheet" href="assets/style.css">
+=======
+    <title>Product - Seraphine Atelier</title>
+    @vite(['resources/js/app.js'])
+>>>>>>> Stashed changes
 </head>
 <body>
 
-
-    <style>
-  /* ========ZAk styling ======== */
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #ffffff;
-  color: #222222;
-  line-height: 1.7;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", serif;
-  margin: 0;
-}
-
-.section-title {
-  font-size: 2.4rem;
+    <header class="navbar">
+        <div class="logo">Seraphine Atelier</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Shop</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
   text-align: center;
   margin-bottom: 10px;
 }
@@ -425,19 +421,19 @@ h3 {
         <div class="product-grid">
 
             <a href="product.html" class="product-card">
-                <img src="assets/images/elegant gold ring.jpg" alt="Gold Ring">
+                <img src="{{ asset('images/rose-gold.jpg') }}" alt="Gold Ring">
                 <h3>Elegant Gold Ring</h3>
                 <p class="product-price">$249</p>
             </a>
 
             <a href="product.html" class="product-card">
-                <img src="assets/images/silver necklace.jpg" alt="Silver Necklace">
+                <img src="{{ asset('images/gold-necklace.jpg') }}" alt="Silver Necklace">
                 <h3>Silver Necklace</h3>
                 <p class="product-price">$199</p>
             </a>
 
             <a href="product.html" class="product-card">
-                <img src="assets/images/diamond earrings.jpg" alt="Diamond Earrings">
+                <img src="{{ asset('images/diamond-earring.jpg') }}" alt="Diamond Earrings">>
                 <h3>Diamond Earrings</h3>
                 <p class="product-price">$349</p>
             </a>

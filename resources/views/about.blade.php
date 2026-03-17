@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< Updated upstream
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>About &ndash; Skyrose Atelier</title>
@@ -64,12 +65,19 @@
             .values-grid { grid-template-columns: 1fr; }
         }
     </style>
+=======
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Seraphine Atelier</title>
+  @vite(['resources/js/app.js'])
+>>>>>>> Stashed changes
 </head>
 <body>
     <div class="page-wrapper">
         <div class="PageContent">
             @include('partials.nav')
 
+<<<<<<< Updated upstream
             <section class="about-hero">
                 <img src="{{ asset('images/logo Skyrose.jpg') }}" alt="Skyrose Atelier logo" style="width:260px;height:auto;margin-bottom:20px;border-radius:4px;">
                 <h1 class="MainTitle">About Skyrose Atelier</h1>
@@ -85,6 +93,20 @@
                 </p>
                 <a href="/products"><button class="LearnMoreButton">Browse Collection</button></a>
             </section>
+=======
+  <div class="page-wrapper">
+    <header class="navbar">
+      <div class="logo">Seraphine Atelier</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Shop</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+>>>>>>> Stashed changes
 
             <section class="Passion">
                 <div class="PassionBox">
@@ -100,8 +122,68 @@
             </section>
         </div>
 
+<<<<<<< Updated upstream
         @include('partials.footer')
     </div>
+=======
+<!--icons for login +shopping cart-->
+    <div class="IconNav">
+      <a href="/login"><img src="{{ asset('images/ProfileIcon.png') }}" alt="Login"></a>
+      <a href="/cart"><img src="{{ asset('images/CartIcon.png') }}" alt="Cart"></a>
+    </div>
+  </div>
+
+<!--main about section-->
+  <section class="TitleSection">
+    <h1 class="MainTitle">About Luxury Jewelry Store</h1>
+
+    <!--short intro of the store-->
+    <p class="TitleDescription">
+      Founded with a love of fine craftsmanship, Luxury Jewelry Store offers
+      handcrafted pieces made from ethically sourced materials. Our artisans
+      blend traditional techniques with modern design to deliver heirloom-quality
+      jewelry for every occasion.
+    </p>
+
+    <!--extra info about brand values-->
+    <p class="TitleDescription">
+      We focus on: craftsmanship, transparency, and exceptional customer service.
+      Every piece is inspected before shipping and comes with a simple care guide.
+    </p>
+
+    <!--button to browse the products-->
+    <a href="products.html"><button class="LearnMoreButton">Browse Collection</button></a>
+  </section>
+
+  <!--mission + image section-->
+  <section class="Passion">
+    <div class="PassionBox">
+      <h2 class="PassionTitle">Our Mission</h2>
+      <!--mission statement-->
+      <p class="PassionBoxText">
+        To create timeless jewelry that celebrates life's special moments — designed
+        to be cherished for generations.
+      </p>
+    </div>
+
+    <!--image showing crafstmanship-->
+    <div class="PassionJewellryContainer">
+      <img src="{{ asset('images/HandCraftedJewellry.png') }}" alt="Craftsmanship" style="max-width:420px;">
+    </div>
+  </section>
+
+    <div class="PageContent">
+
+    <footer id="site-footer" class="footer">
+      <div class="FooterIconsContainer">
+        <img src="{{ asset('images/FacebookIcon.png') }}" class="FooterIcons" alt="facebook">
+        <img src="{{ asset('images/InstagramIcon.png') }}" class="FooterIcons" alt="instagram">
+        <img src="{{ asset('images/YoutubeIcon.png') }}" class="FooterIcons" alt="youtube">
+      </div>
+      <p class="ContactTitle">© 2025 Luxury Jewelry Store</p>
+    </footer>
+  </div>
+>>>>>>> Stashed changes
 </body>
 </html>
 
