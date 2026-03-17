@@ -1,7 +1,6 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-<<<<<<< Updated upstream
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Skyrose Atelier</title>
@@ -132,12 +131,6 @@
             .BtnPrimary, .BtnGhost { width: 100%; text-align: center; }
         }
     </style>
-=======
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seraphine Atelier | Luxury Jewellery</title>
-@vite(['resources/js/app.js'])
->>>>>>> Stashed changes
 </head>
 <body>
     <div class="page-wrapper">
@@ -162,13 +155,12 @@
                 </div>
             </header>
 
-<<<<<<< Updated upstream
             <main>
                 <section class="Hero" aria-label="Hero">
                     <div class="HeroInner">
                         <div class="HeroCopy">
                             <h1 class="HeroTitle">Timeless Jewellery, Crafted to Last</h1>
-                            <p class="HeroSubtitle">Discover handcrafted pieces made with ethically sourced materials. From everyday elegance to statement heirlooms — find something to cherish.</p>
+                            <p class="HeroSubtitle">Discover handcrafted pieces made with ethically sourced materials. From everyday elegance to statement heirlooms â€” find something to cherish.</p>
                             <div class="HeroCTA">
                                 <a href="/products" style="text-decoration:none;"><button class="BtnPrimary">Shop Collection</button></a>
                                 <a href="/about" style="text-decoration:none;"><button class="BtnGhost">Our Story</button></a>
@@ -199,112 +191,6 @@
                 </section>
             </main>
         </div>
-=======
-<header class="navbar">
-<div class="logo">Seraphine Atelier</div>
-<nav>
-<ul class="nav-links">
-<li><a href="/">Home</a></li>
-<li><a href="/products">Shop</a></li>
-<li><a href="/about">About</a></li>
-<li><a href="/contact">Contact</a></li>
-</ul>
-</nav>
-</header>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="container">
-
-<h1 class="hero-title">Discover Timeless Elegance</h1>
-
-<p class="hero-subtitle">
-Luxury handcrafted jewellery for every occasion.
-</p>
-
-<a href="/products" class="btn-primary">Shop Now</a>
-<a href="/products" class="btn-outline">Explore Collections</a>
-
-</div>
-
-</section>
-
-<!-- FEATURED PRODUCTS -->
-
-<section class="product-list-section">
-
-<div class="container">
-
-<h2 class="section-title">Featured Products</h2>
-
-<div class="product-grid">
-
-<a href="/product" class="product-card">
-
-<img src="{{ asset('images/rose-gold.jpg') }}" alt="Elegant Gold Ring">
-
-<h3>Elegant Gold Ring</h3>
-
-<p class="product-price">$249</p>
-
-</a>
-
-<a href="/product" class="product-card">
-
-<img src="{{ asset('images/gold-necklace.jpg') }}" alt="Silver Necklace">
-
-<h3>Silver Necklace</h3>
-
-<p class="product-price">$199</p>
-
-</a>
-
-<a href="/product" class="product-card">
-
-<img src="{{ asset('images/diamond-earring.jpg') }}" alt="Diamond Earrings">
-
-<h3>Diamond Earrings</h3>
-
-<p class="product-price">$349</p>
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- STORY -->
-
-<section class="story-section">
-
-<div class="container">
-
-<h2 class="section-title">Our Story</h2>
-
-<p class="section-subtitle">
-At Seraphine Atelier we craft timeless jewellery that celebrates elegance,
-artistry and individuality. Every piece blends classic craftsmanship with
-modern inspiration.
-</p>
-
-</div>
-
-</section>
-
-<footer class="footer">
-
-<div class="container">
-
-<p>© 2024 Seraphine Atelier • All Rights Reserved</p>
-
-</div>
-
-</footer>
->>>>>>> Stashed changes
 
         @include('partials.footer')
     </div>

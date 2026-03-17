@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
    <style>
@@ -150,18 +150,11 @@
     </style>
 <head>
     <meta charset="UTF-8">
-<<<<<<< Updated upstream
     <title>Contact Us &ndash; Skyrose Atelier</title>
     @include('partials.head')
-=======
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Seraphine Atelier</title>
-    @vite(['resources/js/app.js'])
->>>>>>> Stashed changes
 </head>
 <body>
 <div class="page-wrapper">
-<<<<<<< Updated upstream
     <div class="PageContent">
         @include('partials.nav')
 
@@ -224,86 +217,6 @@
     </div>
 
     @include('partials.footer')
-=======
-  <header class="navbar">
-    <div class="logo">Seraphine Atelier</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/products">Shop</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="PageContent">
-<!-- main content section -->
-    <main class="contact-section">
-      <h1>Contact Us</h1>
-
-<!-- contact form for user to send message -->
-      <form action="{{ route('contact.submit') }}" method="POST" id="contactForm" class="contact-form">
-        @csrf
-        <!-- name input -->
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required value="{{ old('name') }}">
-          @error('name')
-            <span class="error-message">{{ $message }}</span>
-          @enderror
-        </div>
-        <!-- email input -->
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required value="{{ old('email') }}">
-          @error('email')
-            <span class="error-message">{{ $message }}</span>
-          @enderror
-        </div>
-        <!-- message box -->
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required>{{ old('message') }}</textarea>
-          @error('message')
-            <span class="error-message">{{ $message }}</span>
-          @enderror
-        </div>
-        <!-- submit button -->
-        <button type="submit" class="form-submit">Send Message</button>
-      </form>
-        <!-- feedback message after sending -->
-      <p id="response"></p>
-    </main>
-
-    <!-- Featured Products Section -->
-    @if($products && $products->count() > 0)
-    <section class="featured-products">
-        <h2 class="section-title">Featured Products</h2>
-        <div class="product-grid">
-            @foreach($products as $product)
-            <a href="{{ route('products.show', $product->id) }}" class="product-card">
-                <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
-                <h3 class="product-card h3">{{ $product->name }}</h3>
-                <p class="product-price">£{{ number_format($product->price, 2) }}</p>
-            </a>
-            @endforeach
-        </div>
-    </section>
-    @endif
-
-  </div>
-<!-- social media icons -->
-  <footer id="site-footer" class="footer">
-    <div class="FooterIconsContainer">
-      <img src="{{ asset('images/FacebookIcon.png') }}" class="FooterIcons" alt="facebook">
-      <img src="{{ asset('images/InstagramIcon.png') }}" class="FooterIcons" alt="instagram">
-      <img src="{{ asset('images/YoutubeIcon.png') }}" class="FooterIcons" alt="youtube">
-    </div>
-    <!-- copyright -->
-    <p class="ContactTitle">© 2025 Luxury Jewelry Store</p>
-  </footer>
->>>>>>> Stashed changes
 </div>
 
 <script>
