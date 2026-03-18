@@ -559,6 +559,7 @@
             </div>
             
             <button id="detailAddToCart" class="AddToCartButton" style="padding: 15px 40px; font-size: 1.1em; width: auto; min-width: 200px;">Add to Cart</button>
+            <button id="detailWishlistBtn" onclick="toggleDetailWishlist()" style="margin-left:12px;padding:15px 40px;font-size:1.1em;background:transparent;color:#111;border:1px solid #111;border-radius:4px;cursor:pointer;font-weight:600;transition:all 0.2s;">&#9825; Add to Wishlist</button>
             
             <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid #ddd;">
                 <h3 style="margin-bottom: 15px;">Product Details</h3>
@@ -640,6 +641,28 @@ function showProductDetail() {
                 }
             }
             
+            // Setup wishlist button state
+            var wBtn = document.getElementById('detailWishlistBtn');
+            if (wBtn && window.wishlist) {
+                if (window.wishlist.isInWishlist(productName)) {
+                    wBtn.innerHTML = '&#9829; In Wishlist';
+                    wBtn.style.background = '#fff0f0';
+                    wBtn.style.borderColor = '#e74c3c';
+                    wBtn.style.color = '#e74c3c';
+                } else {
+                    wBtn.innerHTML = '&#9825; Add to Wishlist';
+                    wBtn.style.background = 'transparent';
+                    wBtn.style.borderColor = '#111';
+                    wBtn.style.color = '#111';
+                }
+            }
+
+            // Store current detail name for toggleDetailWishlist
+            window._detailProductName = productName;
+            window._detailProductPrice = price;
+            window._detailProductImage = img ? img.src : '';
+            window._detailProductCategory = badge;
+
             // Setup add to cart button
             document.getElementById('detailAddToCart').onclick = function(event) {
                 const qty = parseInt(document.getElementById('detailQuantity').value);
@@ -739,6 +762,32 @@ if (document.getElementById('searchInput')) {
     </script>
 
     <script src="{{ asset('js/wishlist.js') }}"></script>
+    <script>
+    function toggleDetailWishlist() {
+        var wl = window.wishlist;
+        if (!wl) return;
+        var name     = window._detailProductName  || '';
+        var price    = window._detailProductPrice || '';
+        var image    = window._detailProductImage || '';
+        var category = window._detailProductCategory || '';
+        var btn = document.getElementById('detailWishlistBtn');
+        if (wl.isInWishlist(name)) {
+            wl.removeFromWishlist(name);
+            btn.innerHTML = '&#9825; Add to Wishlist';
+            btn.style.background = 'transparent';
+            btn.style.borderColor = '#111';
+            btn.style.color = '#111';
+            wl.showToast(name + ' removed from wishlist');
+        } else {
+            wl.addToWishlist({ name: name, price: price, image: image, link: window.location.href, category: category });
+            btn.innerHTML = '&#9829; In Wishlist';
+            btn.style.background = '#fff0f0';
+            btn.style.borderColor = '#e74c3c';
+            btn.style.color = '#e74c3c';
+            wl.showToast(name + ' added to wishlist');
+        }
+    }
+    </script>
 
 </body>
 </html>
