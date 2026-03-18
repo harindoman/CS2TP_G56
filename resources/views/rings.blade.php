@@ -19,12 +19,12 @@
 
     <!-- category navigation for browsing products -->
     <nav class="CategoryNav" aria-label="Product categories">
-      <a href="{{ route('products.index') }}">All</a>
-      <a href="{{ route('category', 'rings') }}">Rings</a>
-      <a href="{{ route('category', 'earrings') }}">Earrings</a>
-      <a href="{{ route('category', 'bracelets') }}">Bracelets</a>
-      <a href="{{ route('category', 'necklaces') }}">Necklaces</a>
-      <a href="{{ route('category', 'watches') }}">Watches</a>
+      <a href="/products">All</a>
+      <a href="/category/rings">Rings</a>
+      <a href="/category/earrings">Earrings</a>
+      <a href="/category/bracelets">Bracelets</a>
+      <a href="/category/necklaces">Necklaces</a>
+      <a href="/category/watches">Watches</a>
     </nav>
 
     <div class="PageContent">
