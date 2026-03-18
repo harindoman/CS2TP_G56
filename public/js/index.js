@@ -44,7 +44,6 @@
                                <a href="/cart"><img src="/images/CartIcon.png" alt="Cart"></a>`;
         } else {
           iconNav.innerHTML = `<a href="/login"><img src="/images/ProfileIcon.png" alt="Login"></a>
-                               <a href="/register" style="margin-left:8px">Register</a>
                                <a href="/cart"><img src="/images/CartIcon.png" alt="Cart"></a>`;
         }
       })
