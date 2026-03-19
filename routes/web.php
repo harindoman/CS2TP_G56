@@ -107,6 +107,7 @@ Route::get('/orders',               [OrderController::class, 'index'])->name('or
 Route::get('/orders/{id}',          [OrderController::class, 'show'])->name('orders.show');
 Route::post('/orders/{id}/cancel',  [OrderController::class, 'cancel'])->name('orders.cancel');
 Route::post('/orders/{id}/refund',  [OrderController::class, 'refund'])->name('orders.refund');
+Route::get('/my-orders',            [OrderController::class, 'myOrders'])->name('orders.my');
 
 /*
 |-----------------------------------------------------------------------
