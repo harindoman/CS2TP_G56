@@ -101,4 +101,10 @@ class OrderController extends Controller
 
         return response()->json(['success' => true, 'message' => 'Refund request submitted successfully']);
     }
+
+    public function myOrders()
+{
+    $orders = \App\Models\Order::where('user_id', auth()->id())->get();
+    return view('my_orders', compact('orders'));
+}
 }

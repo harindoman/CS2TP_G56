@@ -131,3 +131,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/my-orders', [App\Http\Controllers\OrderController::class, 'myOrders'])->middleware('auth');
