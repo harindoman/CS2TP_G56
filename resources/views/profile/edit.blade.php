@@ -102,8 +102,9 @@
                         </div>
 
                         <div>
-                            <label>Username</label>
-                            <input type="text" value="{{ $user->username ?? $user->name }}" readonly>
+                            <label for="username">Username (optional)</label>
+                            <input id="username" name="username" type="text" value="{{ old('username', $user->username) }}" autocomplete="username">
+                            @error('username') <p style="color:#b91c1c;font-size:12px;margin-top:4px;">{{ $message }}</p> @enderror
                         </div>
 
                         <button type="submit" class="ProfileBtn">Save Changes</button>
