@@ -176,16 +176,22 @@
                     <h2 class="FeaturedCraftsTitle">Featured Crafts</h2>
                     <div class="FeaturedCraftsImgs">
                         <div>
+                            <a href="/products?product=bleeding-heart-bracelet" data-name="Bleeding Heart Bracelet" data-category="Bracelet">
                             <img class="FeaturedItem" src="{{ asset('images/BleedingHeartBracelet.png') }}" alt="Bleeding Heart Bracelet">
                             <h3>Bleeding Heart Bracelet</h3>
+                            </a>
                         </div>
                         <div>
+                            <a href="/products?product=buta-ring" data-name="Buta Ring" data-category="Ring">
                             <img class="FeaturedItem" src="{{ asset('images/ButaRing.png') }}" alt="Buta Ring">
                             <h3>Buta Ring</h3>
+                            </a>
                         </div>
                         <div>
+                            <a href="/products?product=threadbare-earrings" data-name="Threadbare Earrings" data-category="Earrings">
                             <img class="FeaturedItem" src="{{ asset('images/ThreadbareEarrings.png') }}" alt="Threadbare Earrings">
                             <h3>Threadbare Earrings</h3>
+                            </a>
                         </div>
                     </div>
                 </section>
