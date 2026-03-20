@@ -79,6 +79,42 @@
     input.value = '';
     setLoading(true);
 
+
+    // Basic frontend responses (Zak edit - quick replies for common questions)
+const lowerText = text.toLowerCase();
+
+if (lowerText.includes('delivery') || lowerText.includes('shipping')) {
+  setLoading(false);
+  appendMessage('assistant', 'We offer standard delivery (3–5 days) and express delivery (1–2 days).');
+  return;
+}
+
+if (lowerText.includes('return') || lowerText.includes('refund')) {
+  setLoading(false);
+  appendMessage('assistant', 'You can return items within 14 days as long as they are unworn.');
+  return;
+}
+
+if (lowerText.includes('contact')) {
+  setLoading(false);
+  appendMessage('assistant', 'Use the contact page to email us about your enquiry.');
+  return;
+}
+
+
+if (lowerText.includes('price') || lowerText.includes('cost')) {
+  setLoading(false);
+  appendMessage('assistant', 'Prices are listed on each product page. Let me know if you are looking for something specific!');
+  return;
+}
+
+if (lowerText.includes('ring size') || lowerText.includes('size')) {
+  setLoading(false);
+  appendMessage('assistant', 'We recommend checking our size guide or choosing adjustable options.');
+  return;
+}
+
+
     fetch('/chatbot/message', {
       method: 'POST',
       credentials: 'include',
