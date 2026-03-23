@@ -6,7 +6,8 @@
     <a href="/about">About</a>
     <a href="/products">Products</a>
     <a href="/contact">Contact</a>
-    <div class="IconNav" style="display: flex; justify-content: center; align-items: center; gap: 16px; width: 600px; margin: 0 auto;">
+    <div class="IconNav" style="display: flex; justify-content: flex-end; align-items: center; gap: 16px; width: 600px;">
+
         @auth
             @if(auth()->user()->is_admin == 1)
                 <a href="{{ route('admin.dashboard') }}" aria-label="Admin Dashboard" title="Admin Dashboard">
