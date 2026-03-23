@@ -24,7 +24,7 @@
  <!-- product grid container -->
       <main class="ProductsGrid" aria-label="Earrings">
          <!-- single earring product card -->
-        <a class="ProductCard" href="/products?product=threadbare-earrings" data-name="Threadbare Earrings" data-category="Earrings">
+        <a class="ProductCard" href="/products/3" data-name="Threadbare Earrings" data-category="Earrings">
           <div class="ProductImageWrap">
             <img class="ProductImage" src="{{ asset('images/ThreadbareEarrings.png') }}" alt="Threadbare Earrings">
             <span class="ProductBadge">Earrings</span>
