@@ -15,10 +15,12 @@ class Order extends Model
      */
     protected $fillable = [
         'user_id',
-        'total_price',
+        'total_amount',
         'status',
         'order_number',
+        'payment_method',
         'shipping_address',
+        'notes',
     ];
 
     /**
@@ -27,7 +29,7 @@ class Order extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'total_price' => 'decimal:2',
+        'total_amount' => 'decimal:2',
     ];
 
     /**
@@ -42,6 +44,8 @@ class Order extends Model
      * Get the order items for the order.
      */
     public function items(): HasMany
+
+    public function orderItems(): HasMany
     {
         return $this->hasMany(OrderItem::class);
     }

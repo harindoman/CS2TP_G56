@@ -88,8 +88,10 @@ Route::post('/cart/place-order', [CartController::class, 'placeOrder'])->name('c
 | Checkout
 |-----------------------------------------------------------------------
 */
-Route::get('/checkout',  [CheckoutController::class, 'index'])->name('checkout.index');
-Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::middleware('auth')->group(function () {
+    Route::get('/checkout',  [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+});
 
 /*
 |-----------------------------------------------------------------------

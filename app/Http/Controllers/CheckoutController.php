@@ -53,6 +53,7 @@ class CheckoutController extends Controller
         // Create order
         $order = Order::create([
             'user_id'          => auth()->id(),
+            'order_number'     => 'ORD-' . strtoupper(uniqid()),
             'total_amount'     => $total,
             'status'           => 'pending',
             'payment_method'   => $request->payment_method,

@@ -37,7 +37,7 @@ class OrderResource extends Resource
                 TextInput::make('order_number')
                     ->required()
                     ->unique(ignoreRecord: true),
-                TextInput::make('total_price')
+                TextInput::make('total_amount')
                     ->numeric()
                     ->required(),
                 Select::make('status')
@@ -49,7 +49,10 @@ class OrderResource extends Resource
                         'cancelled' => 'Cancelled',
                     ])
                     ->required(),
-                Textarea::make('shipping_address'),
+                TextInput::make('payment_method'),
+                TextInput::make('shipping_address')
+                    ->required(),
+                Textarea::make('notes'),
             ]);
     }
 
@@ -62,7 +65,7 @@ class OrderResource extends Resource
                     ->sortable(),
                 TextColumn::make('user.name')
                     ->searchable(),
-                TextColumn::make('total_price')
+                TextColumn::make('total_amount')
                     ->money('USD'),
                 BadgeColumn::make('status')
                     ->colors([

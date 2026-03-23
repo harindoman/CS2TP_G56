@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
     <title>Shopping Basket &ndash; Skyrose Atelier</title>
     @include('partials.head')
     <style>
@@ -57,27 +56,10 @@
             .CartSummary { position: static; }
         }
     </style>
-=======
-    <title>Your Cart - Seraphine Atelier</title>
-    @vite(['resources/js/app.js'])
->>>>>>> Stashed changes
 </head>
 <body>
     <div class="page-wrapper">
-        <header class="navbar">
-            <div class="logo">Seraphine Atelier</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products">Shop</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
         <div class="PageContent">
-<<<<<<< Updated upstream
             @include('partials.nav')
 
             <div class="CartPage">
@@ -106,81 +88,6 @@
         </div>
 
         @include('partials.footer')
-=======
-<!-- page title and cart section -->
-            <section class="cart-section">
-                <h1>Your Basket</h1>
-
-                @if($cartItems->isEmpty())
-                    <p>Your basket is empty. <a href="/products">Continue Shopping</a></p>
-                @else
-                    <table class="cart-table">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Subtotal</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @php $total = 0; @endphp
-                            @foreach($cartItems as $item)
-                                @php 
-                                    $subtotal = $item->product->price * $item->quantity;
-                                    $total += $subtotal;
-                                @endphp
-                                <tr>
-                                    <td><strong>{{ $item->product->name }}</strong></td>
-                                    <td>£{{ number_format($item->product->price, 2) }}</td>
-                                    <td>
-                                        <div class="quantity-controls">
-                                            <form action="{{ route('cart.update') }}" method="POST" style="display: inline;">
-                                                @csrf
-                                                <input type="hidden" name="product_id" value="{{ $item->product_id }}">
-                                                <button type="submit" name="quantity" value="{{ $item->quantity - 1 }}" class="quantity-btn">-</button>
-                                            </form>
-                                            <span>{{ $item->quantity }}</span>
-                                            <form action="{{ route('cart.update') }}" method="POST" style="display: inline;">
-                                                @csrf
-                                                <input type="hidden" name="product_id" value="{{ $item->product_id }}">
-                                                <button type="submit" name="quantity" value="{{ $item->quantity + 1 }}" class="quantity-btn">+</button>
-                                            </form>
-                                        </div>
-                                    </td>
-                                    <td>£{{ number_format($subtotal, 2) }}</td>
-                                    <td>
-                                        <form action="{{ route('cart.remove') }}" method="POST" style="display: inline;">
-                                            @csrf
-                                            <input type="hidden" name="product_id" value="{{ $item->product_id }}">
-                                            <button type="submit" class="remove-btn">Remove</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <div class="cart-totals">
-                        <div class="cart-total-row final">
-                            <span>Total:</span>
-                            <span>£{{ number_format($total, 2) }}</span>
-                        </div>
-                        <a href="{{ url('/checkout') }}" class="btn-primary" style="display: block; text-align: center; margin-top: 20px;">Go to Checkout</a>
-                    </div>
-                @endif
-            </section>
-        </div>
-
-        <footer id="site-footer" class="footer">
-            <div class="FooterIconsContainer">
-                <img src="{{ asset('images/FacebookIcon.png') }}" class="FooterIcons" alt="facebook">
-                <img src="{{ asset('images/InstagramIcon.png') }}" class="FooterIcons" alt="instagram">
-                <img src="{{ asset('images/YoutubeIcon.png') }}" class="FooterIcons" alt="youtube">
-            </div>
-            <p class="ContactTitle">© 2025 Luxury Jewelry Store</p>
-        </footer>
->>>>>>> Stashed changes
     </div>
 
     <script>
