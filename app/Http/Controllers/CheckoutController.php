@@ -61,23 +61,29 @@ class CheckoutController extends Controller
             'notes'            => $request->notes,
         ]);
 
-        // Create order items, resolving product_id from the stored value or by name lookup
+
+        // Create order items and reduce product stock
         foreach ($cart as $item) {
             $productId = $item['product_id'] ?? null;
-
+            $product = null;
             if (!$productId) {
                 // Fallback: look up product by name
                 $product = Product::where('name', $item['name'])->first();
                 $productId = $product?->id;
+            } else {
+                $product = Product::find($productId);
             }
 
-            if ($productId) {
+            if ($productId && $product) {
                 OrderItem::create([
                     'order_id'   => $order->id,
                     'product_id' => $productId,
                     'quantity'   => $item['quantity'],
                     'unit_price' => $item['price'],
                 ]);
+                // Reduce stock quantity
+                $product->stock_quantity = max(0, $product->stock_quantity - $item['quantity']);
+                $product->save();
             }
         }
 

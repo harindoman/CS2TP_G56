@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -20,6 +24,7 @@ class Product extends Model
         'material',
         'image_url',
         'stock_quantity',
+        'stock_threshold',
     ];
 
     /**
@@ -30,6 +35,7 @@ class Product extends Model
     protected $casts = [
         'price' => 'decimal:2',
         'stock_quantity' => 'integer',
+        'stock_threshold' => 'integer',
     ];
 
     /**

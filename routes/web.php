@@ -1,4 +1,7 @@
+
 <?php
+// Reviews
+Route::post('/products/{product}/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
@@ -8,6 +11,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ChatbotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,7 +45,14 @@ Route::get('/category/watches',   fn() => view('watches'))->name('category.watch
 | Products
 |-----------------------------------------------------------------------
 */
-Route::get('/products', fn() => view('products'))->name('products.index');
+// Redirect old /products?product=slug URLs to /products, and always use controller for /products
+Route::get('/products', function () {
+    if (request()->has('product')) {
+        return redirect('/products');
+    }
+    // Forward to controller for product listing
+    return app(\App\Http\Controllers\ProductController::class)->index();
+})->name('products.index');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 
 /*
@@ -51,6 +62,13 @@ Route::get('/products/{id}', [ProductController::class, 'show'])->name('products
 */
 Route::get('/contact',  [ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+/*
+|-----------------------------------------------------------------------
+| Chatbot
+|-----------------------------------------------------------------------
+*/
+Route::post('/chatbot/message', [ChatbotController::class, 'respond'])->name('chatbot.respond');
 
 /*
 |-----------------------------------------------------------------------
@@ -69,6 +87,13 @@ Route::get('/auth/status',   [AuthController::class, 'status'])->name('auth.stat
 Route::get('/session/init',  [AuthController::class, 'sessionInit'])->name('session.init');
 Route::get('/login-custom',    [AuthController::class, 'showLogin'])->name('login-custom');
 Route::get('/register-custom', [AuthController::class, 'showRegister'])->name('register-custom');
+
+/*
+|-----------------------------------------------------------------------
+| Wishlist
+|-----------------------------------------------------------------------
+*/
+Route::get('/wishlist', fn() => view('wishlist'))->name('wishlist');
 
 /*
 |-----------------------------------------------------------------------
@@ -98,10 +123,14 @@ Route::middleware('auth')->group(function () {
 | Orders
 |-----------------------------------------------------------------------
 */
-Route::get('/orders',               [OrderController::class, 'index'])->name('orders.index');
-Route::get('/orders/{id}',          [OrderController::class, 'show'])->name('orders.show');
-Route::post('/orders/{id}/cancel',  [OrderController::class, 'cancel'])->name('orders.cancel');
-Route::post('/orders/{id}/refund',  [OrderController::class, 'refund'])->name('orders.refund');
+Route::middleware('auth')->group(function () {
+    Route::get('/orders',               [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{id}',          [OrderController::class, 'show'])->name('orders.show');
+    Route::post('/orders/{id}/cancel',  [OrderController::class, 'cancel'])->name('orders.cancel');
+    Route::post('/orders/{id}/refund',  [OrderController::class, 'refund'])->name('orders.refund');
+    Route::post('/orders/{id}/return',  [OrderController::class, 'requestReturn'])->name('orders.return');
+    Route::get('/my-orders',            [OrderController::class, 'myOrders'])->name('orders.my');
+});
 
 /*
 |-----------------------------------------------------------------------
@@ -109,7 +138,16 @@ Route::post('/orders/{id}/refund',  [OrderController::class, 'refund'])->name('o
 |-----------------------------------------------------------------------
 */
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard',               [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/orders',                  [AdminController::class, 'orders'])->name('orders');
+    Route::patch('/orders/{id}/status',    [AdminController::class, 'updateOrderStatus'])->name('orders.updateStatus');
+
+    // Product management
+    Route::get('/products/{id}/edit',      [AdminController::class, 'editProduct'])->name('products.edit');
+    Route::post('/products/{id}/edit',     [AdminController::class, 'updateProduct'])->name('products.update');
+
+    // Dismiss low stock alert
+    Route::post('/dismiss-low-stock-alert', [AdminController::class, 'dismissLowStockAlert'])->name('dismissLowStockAlert');
 });
 
 /*

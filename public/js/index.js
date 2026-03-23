@@ -14,7 +14,13 @@
         if (data.success) {
           const cartCountEl = document.getElementById('cart-count');
           if (cartCountEl && data.cartCount !== undefined) {
-            cartCountEl.textContent = data.cartCount;
+            const count = parseInt(data.cartCount) || 0;
+            if (count > 0) {
+              cartCountEl.textContent = count;
+              cartCountEl.style.display = 'inline-block';
+            } else {
+              cartCountEl.style.display = 'none';
+            }
           }
         }
       })
@@ -29,31 +35,49 @@
         const iconNav = document.getElementById('auth-buttons') || document.querySelector('.IconNav');
         if (!iconNav) return;
         if (data.loggedIn) {
-          iconNav.innerHTML = `<span style="margin-right:16px;color:#111;">Hello, ${escapeHtml(data.username)}</span>
+          const adminIcon = data.is_admin
+            ? `<a href="/admin/orders" aria-label="Customer Orders" style="margin-right:6px;"><img src="/images/orderconfirmed.png" alt="Admin Orders" style="width:28px;height:28px;vertical-align:middle;"></a>`
+            : '';
+          iconNav.innerHTML = `<a href="/profile" class="NavHello">Hello, ${escapeHtml(data.username)}</a>
                                <a href="/profile" aria-label="My Profile" style="margin-right:10px"><img src="/images/ProfileIcon.png" alt="Profile" style="width:28px;height:28px;vertical-align:middle;"></a>
-                               <a href="#" id="logoutBtn" style="margin-right:10px">Logout</a>
-                               <a href="/cart"><img src="/images/CartIcon.png" alt="Cart"><span id="cart-count" style="display:inline-block;margin-left:6px;color:#111;">0</span></a>`;
-          const lb = document.getElementById('logoutBtn');
-          if (lb) lb.addEventListener('click', e => {
-            e.preventDefault();
-            fetch('/logout', {
-              method: 'POST',
-              credentials: 'include',
-              headers: { 'X-CSRF-TOKEN': getCsrfToken(), 'Content-Type': 'application/json' }
-            }).then(() => location.href = '/');
-          });
+                               ${adminIcon}
+                               <a href="/cart"><img src="/images/CartIcon.png" alt="Cart"></a>`;
         } else {
           iconNav.innerHTML = `<a href="/login"><img src="/images/ProfileIcon.png" alt="Login"></a>
-                               <a href="/register" style="margin-left:8px">Register</a>
-                               <a href="/cart"><img src="/images/CartIcon.png" alt="Cart"><span id="cart-count" style="display:inline-block;margin-left:6px;color:#111;">0</span></a>`;
+                               <a href="/cart"><img src="/images/CartIcon.png" alt="Cart"></a>`;
         }
       })
       .catch(()=>{});
     function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ initSession(); initAuth(); });
-  else { initSession(); initAuth(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ initSession(); initAuth(); initNavSearch(); });
+  else { initSession(); initAuth(); initNavSearch(); }
+
+  // --- Expanding nav search ---
+  function initNavSearch(){
+    document.querySelectorAll('.NavSearchWrap').forEach(function(wrap){
+      const btn = wrap.querySelector('.NavSearchBtn');
+      const input = wrap.querySelector('.NavSearchInput');
+      if (!btn || !input) return;
+      btn.addEventListener('click', function(){
+        wrap.classList.toggle('open');
+        if (wrap.classList.contains('open')) input.focus();
+      });
+      input.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' && input.value.trim()) {
+          window.location.href = '/products?q=' + encodeURIComponent(input.value.trim());
+        }
+        if (e.key === 'Escape') {
+          wrap.classList.remove('open');
+          btn.focus();
+        }
+      });
+      document.addEventListener('click', function(e){
+        if (!wrap.contains(e.target)) wrap.classList.remove('open');
+      });
+    });
+  }
 
   // fallback global logout
   if (!window.logout){
@@ -69,36 +93,51 @@
 
 // Product price database
 const productPrices = {
-  'Buta Ring': 185,
-  'Saphire Ring': 420,
-  'Rose Gold Ring': 385,
-  'Vintage Ring': 650,
-  'Diamond Ring': 550,
-  'Threadbare Earrings': 120,
-  'Diamond Earrings': 480,
-  'Gold Hoop': 195,
-  'Pearl Drop': 275,
-  'Silver Stud': 145,
-  'Bleeding Heart Bracelet': 245,
-  'Gold Bangle': 380,
-  'Cuban Bracelet': 520,
-  'Charm Bracelet': 310,
-  'Leather Bracelet': 175,
-  'Signature Necklace': 380,
-  'Diamond Choker': 720,
-  'Pearl Necklace': 420,
-  'Gold Necklace': 540,
-  'Layered Necklace': 340,
-  'Gold Watch': 650,
-  'Sport Watch': 290,
-  'Silver Watch': 410,
-  'Classic Leather Watch': 350,
-  'Luxury Watch': 850
+  'Diamond Solitaire Ring': 3000,
+  'Pearl Necklace': 300,
+  'Gold Hoop Earrings': 190,
+  'Sapphire Pendant': 900,
+  'Tennis Bracelet': 3500,
+  'Emerald Stud Earrings': 750,
+  'Ruby Cocktail Ring': 1900,
+  'Silver Charm Bracelet': 150,
+  'Rose Gold Watch': 1300,
+  'Aquamarine Ring': 600,
+  'Gold Chain Necklace': 450,
+  'Diamond Stud Earrings': 1500,
+  'Opal Drop Earrings': 600,
+  'Platinum Band': 800,
+  'Turquoise Bead Necklace': 250,
+  'Leather Wrap Bracelet': 60,
+  'Citrine Pendant': 350,
+  'Pearl Stud Earrings': 100,
+  'Garnet Statement Ring': 400,
+  'Crystal Bangle': 80,
+  'Onyx Cufflinks': 130,
+  'Amethyst Tennis Bracelet': 500,
+  'Topaz Drop Necklace': 300,
+  'Sapphire Stud Earrings': 650,
+  'Rose Quartz Pendant': 200
 };
 
 function getCsrfToken() {
   const meta = document.querySelector('meta[name="csrf-token"]');
   return meta ? meta.getAttribute('content') : '';
+}
+
+// Toast notification for cart actions
+function showCartToast(msg) {
+  var toast = document.getElementById('cart-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'cart-toast';
+    toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:12px 24px;border-radius:4px;font-size:14px;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none;';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.opacity = '1';
+  clearTimeout(toast._ct);
+  toast._ct = setTimeout(function() { toast.style.opacity = '0'; }, 2500);
 }
 
 // Quick add to cart function
@@ -145,14 +184,14 @@ function addToCartQuick(event, productName, quantity) {
       }, 2000);
       const cartCount = document.getElementById('cart-count');
       if (cartCount && data.cartCount) cartCount.textContent = data.cartCount;
-      alert(productName + ' added to basket!');
+      showCartToast(productName + ' added to basket!');
     } else {
-      alert('Error: ' + (data.error || 'Failed to add to basket'));
+      showCartToast('Error: ' + (data.error || 'Failed to add to basket'));
     }
   })
   .catch(err => {
     console.error('Fetch error:', err);
-    alert('Error adding to basket: ' + err.message);
+    showCartToast('Error adding to basket: ' + err.message);
   });
 }
 

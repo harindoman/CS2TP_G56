@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/logo%20Skyrose.jpg') }}">
     <script src="{{ asset('js/index.js') }}" defer></script>
     <style>
         .ProductDetail {
@@ -255,20 +256,7 @@
     <div class="page-wrapper">
         <div class="PageContent">
             <!-- Top Navigation -->
-            <div class="TopNav">
-                <a class="logo-link" href="/" aria-label="Skyrose Atelier home"><img class="header-logo" src="{{ asset('images/logo Skyrose.jpg') }}" alt="Skyrose Atelier logo"></a>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/products">Products</a>
-                <a href="/contact">Contact</a>
-                <div class="IconNav">
-                    <a class="NavSearch" href="/products#searchInput" aria-label="Search"><img src="{{ asset('images/SearchIcon.png') }}" alt="Search"></a>
-                    <div id="auth-buttons">
-                        <a href="/login" aria-label="Login"><img src="{{ asset('images/ProfileIcon.png') }}" alt="Profile"></a>
-                        <a href="/cart" aria-label="Cart"><img src="{{ asset('images/CartIcon.png') }}" alt="Cart"><span id="cart-count">0</span></a>
-                    </div>
-                </div>
-            </div>
+            @include('partials.nav')
 
             <!-- Breadcrumb Navigation -->
             <div style="padding: 20px; border-bottom: 1px solid #eee;">
@@ -765,6 +753,5 @@
     </script>
 </body>
 </html>
-
 
 

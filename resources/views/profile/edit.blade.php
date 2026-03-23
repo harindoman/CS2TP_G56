@@ -102,8 +102,9 @@
                         </div>
 
                         <div>
-                            <label>Username</label>
-                            <input type="text" value="{{ $user->username ?? $user->name }}" readonly>
+                            <label for="username">Username (optional)</label>
+                            <input id="username" name="username" type="text" value="{{ old('username', $user->username) }}" autocomplete="username">
+                            @error('username') <p style="color:#b91c1c;font-size:12px;margin-top:4px;">{{ $message }}</p> @enderror
                         </div>
 
                         <button type="submit" class="ProfileBtn">Save Changes</button>
@@ -141,53 +142,14 @@
                     </form>
                 </div>
 
-                {{-- Orders history --}}
-                <div class="ProfileCard">
-                    <h2>{{ $isAdmin ? 'All Customer Orders' : 'My Order History' }}</h2>
+                {{-- Orders history removed for admin profile --}}
 
-                    @if($orders->isEmpty())
-                        <div class="OrdersEmpty">No orders found.</div>
-                    @else
-                        <div style="overflow-x:auto;">
-                            <table class="OrdersTable">
-                                <thead>
-                                    <tr>
-                                        <th>Order #</th>
-                                        @if($isAdmin)
-                                            <th>Customer</th>
-                                        @endif
-                                        <th>Date</th>
-                                        <th>Total</th>
-                                        <th>Status</th>
-                                        <th>Payment</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($orders as $order)
-                                    <tr>
-                                        <td style="font-weight:600;">#{{ $order->id }}</td>
-                                        @if($isAdmin)
-                                            <td>
-                                                <span style="font-weight:600;">{{ $order->user->name ?? 'Unknown' }}</span><br>
-                                                <span style="font-size:11px;color:#888;">{{ $order->user->email ?? '' }}</span>
-                                            </td>
-                                        @endif
-                                        <td>{{ $order->created_at->format('d M Y') }}</td>
-                                        <td>&pound;{{ number_format($order->total_amount, 2) }}</td>
-                                        <td>
-                                            <span class="OBadge {{ $order->status }}">{{ ucfirst($order->status) }}</span>
-                                        </td>
-                                        <td style="text-transform:capitalize;color:#555;">{{ str_replace('_', ' ', $order->payment_method ?? '-') }}</td>
-                                        <td>
-                                            <a href="{{ route('orders.show', $order->id) }}" class="OrderDetailLink">View &rarr;</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    @endif
+                {{-- Logout --}}
+                <div class="ProfileCard" style="text-align:center;">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="ProfileBtnDanger" style="width:100%;padding:14px;font-size:15px;">Log Out</button>
+                    </form>
                 </div>
 
                 {{-- Delete Account --}}

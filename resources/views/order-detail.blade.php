@@ -40,18 +40,6 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <header class="navbar">
-            <div class="logo">Seraphine Atelier</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products">Shop</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
         <div class="PageContent">
             @include('partials.nav')
 
@@ -100,7 +88,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($order->orderItems as $item)
+                        @foreach($order->items as $item)
                         <tr>
                             <td>{{ $item->product->name ?? 'Product removed' }}</td>
                             <td style="text-align:center;">{{ $item->quantity }}</td>
@@ -131,6 +119,21 @@
                         @if($order->status === 'pending' || $order->status === 'processing')
                             <button onclick="cancelOrder({{ $order->id }})" class="ActionBtn cancel">Cancel Order</button>
                         @endif
+
+                    
+        @if(true)
+            <button onclick="requestReturn({{ $order->id }})" class="ActionBtn return">
+                Request Return
+            </button>
+        @endif
+
+
+
+
+
+
+
+
                         <a href="{{ route('products.index') }}" class="ActionBtn shop">Continue Shopping</a>
                     </div>
                 </div>
@@ -160,6 +163,34 @@
             })
             .catch(() => showToast('An error occurred.'));
         }
+
+        function requestReturn(orderId) {
+    if (!confirm('Request a return for this order?')) return;
+
+    showToast('Submitting return request...');
+
+    setTimeout(() => {
+        showToast('Return request sent!');
+    }, 1000);
+
+    console.log('Return requested for order:', orderId);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>

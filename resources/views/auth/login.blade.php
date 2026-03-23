@@ -16,8 +16,8 @@
                 <div class="AuthCard">
                     <h1 class="AuthTitle">Login</h1>
                     <form id="login-form" class="AuthForm">
-                        <label for="username">Username or Email</label>
-                        <input id="username" name="username" type="text" required>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="text" required>
                         <label for="password">Password</label>
                         <input id="password" name="password" type="password" required>
                         <button type="submit" class="AuthButton">Login</button>
