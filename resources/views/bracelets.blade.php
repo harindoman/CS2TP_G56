@@ -23,7 +23,7 @@
       </section>
 
       <main class="ProductsGrid" aria-label="Bracelets">
-        <a class="ProductCard" href="/products?product=bleeding-heart-bracelet" data-name="Bleeding Heart Bracelet" data-category="Bracelet">
+        <a class="ProductCard" href="/products/1" data-name="Bleeding Heart Bracelet" data-category="Bracelet">
           <div class="ProductImageWrap">
             <img class="ProductImage" src="{{ asset('images/BleedingHeartBracelet.png') }}" alt="Bleeding Heart Bracelet">
             <span class="ProductBadge">Bracelet</span>
